@@ -1,0 +1,13 @@
+package Airports.src;
+
+public class Bag {
+    private int weight;
+
+    public Bag (int weight) {
+this.weight = weight;
+    }
+    public int getWeight () {
+        return this.weight;
+    }
+    
+}
