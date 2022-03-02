@@ -1,0 +1,54 @@
+@startuml
+
+
+class Passenger {
+    String: Name;
+    String: Passport;
+    boolean: hasLuggage;
+
+}
+
+class Baggage {
+    double weight;
+
+}
+Passenger --> AirportCheckin: Passenger & Bag Check into Airport
+Baggage --> AirportCheckin
+
+
+class Plane {
+    String: Type;
+    Int [] seat;
+    Int seatNumber;
+    Depart(Airport);
+    Arrive(Airport);
+
+}
+class crewMember {
+    String: Name;
+    String: Position;
+    String: StaffNumber;
+}
+crewMember --> AirportCheckin: Crew Arrive Allocated Plane
+
+
+class AirportCheckin {
+    String: Name;
+    CheckIn();
+    dropBag();
+    boolean baggageAllowance();
+    AssignPassengerSeatNumber();
+    boolean hasPassport;
+    boolean hasBaggage;
+}
+AirportCheckin --> Plane
+
+class Destination {
+    String: Name;
+}
+Plane --> Destination
+Passenger --> Destination : Arrives with Baggage removed from list
+
+
+
+@enduml
