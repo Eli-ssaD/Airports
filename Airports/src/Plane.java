@@ -1,35 +1,27 @@
 package Airports.src;
 
 public class Plane {
-    //private String type;
-    private Seat[] seats;
 
-    public Plane(String type) {
-        //this.type = type;
-        this.seats = new Seat[10];
-        this.seats[0] = new Seat();
-        this.seats[1] = new Seat();
-        this.seats[2] = new Seat();
-        this.seats[3] = new Seat();
-        this.seats[4] = new Seat();
-        this.seats[5] = new Seat();
-        this.seats[6] = new Seat();
-        this.seats[7] = new Seat();
-        this.seats[8] = new Seat();
-        this.seats[9] = new Seat();
-    }
+    Passenger[][] seats = {
+        {null, null, null},
+        {null, null, null},
+        {null, null, null},
+        {null, null, null},
+        {null, null, null},
+        {null, null, null},
+        {null, null, null},
+    };
 
-    public Seat[] getSeat() {
-        return this.seats;
-    }
+            public Boolean isSeatEmpty(BoardingPass bPass) {
+                int row = bPass.getSeat()[0];
+                int seat = bPass.getSeat()[1];
+                return this.seats[row][seat] == null;
+            }
+            public void boardPassenger(Passenger passenger) {
+                int row = passenger.getBoardingPass().getSeat()[0];
+                int seat = passenger.getBoardingPass().getSeat()[1];
+                this.seats[row][seat] = passenger;
 
-    public void checkIn(Person person) {
-        for (Seat seats : this.seats) {
-            if (seats.isEmpty(0)) {
-                seats.addPerson(person);
-                break;
             }
         }
-    }
 
-}

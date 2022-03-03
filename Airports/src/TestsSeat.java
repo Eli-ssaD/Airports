@@ -7,7 +7,7 @@ import org.junit.Test;
 public class TestsSeat {
     @Test
     public void aPersonCanBeAllocatedASeatNumber(){
-        SeatNumber seatNumber = new SeatNumber();
+        seatNumber seatNumber = new seatNumber();
         assertEquals(seatNumber.getSeatNumber(), seatNumber);
     
     }

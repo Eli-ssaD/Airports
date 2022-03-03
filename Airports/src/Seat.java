@@ -2,30 +2,30 @@ package Airports.src;
 
 public class Seat {
     private String seatNumber = "seatNumber";
-    private String person = "person";
+    private String passenger = "passenger";
 
-    //public Seat (Person, seatNumber){
+    public Seat (Passenger, seatNumber) {
 
-       // this.seatNumber = seatNumber;
-    //}
-    
-    public String getPerson() {
-        return person;
+        this.seatNumber = seatNumber;
+    }
+        
+    public String getPassenger() {
+        return passenger;
     }
 
-    public void setPerson(String person) {
-        this.person = person;
+    public void setPerson(String passenger) {
+        this.passenger = passenger;
     }
 
     public String getseatNumber() {
         return seatNumber;
     }
 
-    public void addPerson(Person person) {
+    public void addPassenger(Passenger passenger) {
     }
 
-    public boolean isEmpty(int i) {
-        return false;
+    //public boolean isEmpty(int i) {
+        //return false;
     }
-}
+//}
     
